@@ -1,0 +1,64 @@
+.filers {
+  height: 5vh;
+  line-height: 5vh;
+  width: 50% ;
+  display: grid;
+  grid-template-columns: 20% 30% 50%;
+  align-items: center;
+
+  span{
+    background-color: #b6d7a8;
+    border: 1px solid black;
+    box-shadow: 0.2em 0.2em;
+    height: 2em;
+    width: 5em;
+    text-align: center;
+    line-height: 2em;
+    margin-left: 2vw;
+  }
+  input[type="text"] {
+    height: 1.5em;
+    border: 1px solid black;
+    text-indent: 1em;
+    border-radius: 1em;
+    margin-right: 10%;
+}
+select {
+  margin-left: 30%;
+  height: 1.8em;
+}
+}
+@media only screen
+and (min-device-width : 320px)
+and (max-device-width : 480px)
+ {
+
+  .filers {
+    height: 5vh;
+    line-height: 5vh;
+    width: 100% ;
+    display: grid;
+    grid-template-columns:  20% 40% 40%;
+    align-items: center;
+  }
+  .filers[_ngcontent-c1] select[_ngcontent-c1] {
+
+
+     margin-left: 5%;
+
+
+
+}
+
+
+}
+
+@media only screen
+and (min-device-width : 768px)
+and (max-device-width : 1024px) {
+  .filers {
+    width: 100% ;
+  grid-template-columns:  20% 40% 40%;
+
+  align-items: center;}
+}

@@ -1,0 +1,5 @@
+<div class="filers">
+  <span >+ Add </span>  <input type="text" (keyup)="setQuery()"  [(ngModel)]="Query" placeholder="Srearch product" >
+ <select  [(ngModel)]="state"   (change)="setpipeState()"   >
+   <option *ngFor="let item of selectOp "   [value]="item.value"  >{{item.name}}</option> </select>
+</div>

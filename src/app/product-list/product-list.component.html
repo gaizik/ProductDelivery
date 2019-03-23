@@ -1,0 +1,12 @@
+
+<div class="productsList"  *ngIf="ProductList !== undefined && ProductList.length > 0">
+  <div  class="producTab " (click)="geteditItem(prod)"
+    *ngFor="let prod of ProductList | includes : query | slice :startPoint :endPoint  | drupDawon : Pipe; " >
+    <img  [src]="prod.ThumbnailImage" />
+    <div>
+    <h1>{{ prod.name }}</h1>
+    <p>{{ prod.description }}</p>
+  </div>
+    <button >Delete</button>
+  </div>
+  <div class="buttons" > <span (click)="previous()">  Previous</span> <span>Page num {{pages}} of {{totalPages}}</span>  <span (click)="next()">  Next</span></div>

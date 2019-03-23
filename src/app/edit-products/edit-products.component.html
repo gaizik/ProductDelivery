@@ -1,0 +1,45 @@
+<form class="editTab" *ngIf="EditItem" [formGroup]="editForm" >
+
+    <div class="image" data-tilt data-tilt-glare data-tilt-max-glare="0.8">
+  <img  [src]="EditItem.bigImage" ></div>
+<div class="name">
+  <label for="name">Name</label>
+  <input formControlName="editName" type="text"   value="{{EditItem.name}}">
+  <div class="minHeight">  <p *ngIf="editForm.controls.editName.errors?.required">Must insert Name To Save</p></div>
+
+</div>
+<div class="description">
+  <label for="description">Description</label>
+  <textarea formControlName="editDiscribtion" rows="2" cols="50"  value="{{EditItem.description}}"> </textarea>
+  <div class="minHeight">
+  <p *ngIf="editForm.controls.editDiscribtion.errors?.required">Must description  To Save</p>
+  <p *ngIf="editForm.controls.editDiscribtion.errors?.minlength">Must have 25 Char Min</p>
+</div>
+</div>
+<div class="price">
+    <label for="price">Price</label>
+  <input formControlName="editPrice" type="number"    value="{{EditItem.price}}">
+  <div class="minHeight">
+  <p *ngIf="editForm.controls.editPrice.errors">Price must be more then 0</p>
+</div>
+</div>
+
+<div class="buton">
+  <span *ngIf="editForm.invalid">Must update all feleds to anabled Save button  </span>
+  <button [disabled]="editForm.invalid" (click)="onSubmit()" >Save</button>
+</div>
+</form>
+
+<section *ngIf="submitted">
+    <div class="modal" (click)="submitted = !submitted" >
+        <div class="modalBody">
+            <h1>Thank you for updating product!</h1>
+            <p>
+              {{EditItem.name}}
+            </p>
+
+        </div>
+    </div>
+    <div  class="modalBackground"></div>
+</section>
+
